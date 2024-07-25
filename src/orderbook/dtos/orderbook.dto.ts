@@ -1,8 +1,9 @@
 import { IsEnum, IsString } from 'class-validator';
+import { Exchange } from '../exchange.enum';
 
 export class GetOrderbookDto {
-  @IsEnum(['BINANCE', 'BITMART'])
-  exchange: 'BINANCE' | 'BITMART';
+  @IsEnum(Exchange)
+  exchange: Exchange;
 
   @IsString()
   baseCoin: string;
