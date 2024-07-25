@@ -19,54 +19,60 @@
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+ # API orderbook-api
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Esta API permite obtener un snapshot de un orderbook, dado un exchange y un símbolo de un par.
 
-## Installation
+## Instalación
+
+1. Clona este repositorio en tu máquina local.
+2. Instala las dependencias usando npm:
 
 ```bash
-$ npm install
+npm install
 ```
+## Test 
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
+Para testear la API se debe correr el siguiente comando 
 
 ```bash
-# unit tests
-$ npm run test
 
 # e2e tests
 $ npm run test:e2e
 
-# test coverage
-$ npm run test:cov
+```
+## Uso
+
+Para utilizar esta API
+
+1. Inicia el servidor ejecutando el siguiente comando:
+
+```bash
+npm run start
 ```
 
-## Support
+2. La solicitud HTTP al endpoint correspondiente
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## ORDERBOOK
+
+- `GET /orderbook?exchange=BINANCE&baseCoin=BTC&quoteCoin=USDT`: Obtiene el snapshot de un exchange con su par de manera ordenada.
+  - Query Parameters: `exchange (string), baseCoin (string), quoteCoin (string)`
+  - Respuesta exitosa: `200 OK`
+  - Ejemplo de respuesta: `{ "timestamp": "2024-07-25T10:00:00.000Z","bids": [// array de bid orders  ],aks": [
+    // array de ask orders
+  ] }`
+
+## Errores
+
+- `400 Bad Request`: La solicitud contiene datos incorrectos o incompletos.
+- `500 Internal Server Error`: Error interno del servidor.
+
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Analia Faure]
+- linkedin - [Linkedin](https://www.linkedin.com/in/analia-faure-52ab3311a/)
 
 ## License
 
