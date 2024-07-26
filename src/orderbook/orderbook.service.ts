@@ -28,8 +28,8 @@ export class OrderbookService {
 
     const orderbook = await this.fetchOrderbook(exchange, symbol);
 
-    const bids = orderbook.bids || orderbook.buys;
-    const asks = orderbook.asks || orderbook.sells;
+    const bids = orderbook.bids;
+    const asks = orderbook.asks;
 
     if (!bids || !asks) {
       throw new HttpException('Orderbook data is not available', HttpStatus.INTERNAL_SERVER_ERROR);
