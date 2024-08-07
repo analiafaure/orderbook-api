@@ -1,6 +1,8 @@
+// orderbook.controller.ts
 import { Controller, Get, Query, BadRequestException } from '@nestjs/common';
 import { OrderbookService } from './orderbook.service';
-import { Exchange } from './exchange.enum';
+import { Exchange } from './enum/exchange.enum';
+import { OrderbookStrategyFactory } from './orderbook-strategy-factory';
 
 @Controller('orderbook')
 export class OrderbookController {
@@ -28,4 +30,3 @@ export class OrderbookController {
     return upperCaseExchange as Exchange;
   }
 }
-

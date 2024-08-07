@@ -1,5 +1,5 @@
 import { IsEnum, IsString } from 'class-validator';
-import { Exchange } from '../exchange.enum';
+import { Exchange } from '../enum/exchange.enum';
 
 export class GetOrderbookDto {
   @IsEnum(Exchange)

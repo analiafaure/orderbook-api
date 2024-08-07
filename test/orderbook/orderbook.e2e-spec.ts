@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
 import { INestApplication } from '@nestjs/common';
 import { AppModule } from '../../src/app.module';
-import { Exchange } from '../../src/orderbook/exchange.enum';
+import { Exchange } from '../../src/orderbook/enum/exchange.enum';
 
 describe('OrderbookController (e2e)', () => {
   let app: INestApplication;
